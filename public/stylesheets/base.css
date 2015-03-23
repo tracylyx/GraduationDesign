@@ -1,0 +1,323 @@
+/**
+ * hd: header
+ * sb: sidebar
+ */
+/**
+ * reset
+ * 
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "微软雅黑";
+  background: url(../images/bg.jpg);
+  background-size: cover;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+*::selection {
+  color: pink;
+  background: #d2ca92;
+}
+/**
+ * 清除浮动
+ */
+.cf {
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+/**
+ * 全局
+ * 
+ */
+.to-top {
+  width: 50px;
+  height: 50px;
+  background: blue;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: none;
+  cursor: pointer;
+}
+.weibo {
+  width: 50px;
+  height: 50px;
+  background: red;
+  position: fixed;
+  right: 10px;
+  bottom: 70px;
+}
+.weibo img {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  right: 65px;
+  display: none;
+  z-index: 100;
+}
+.navbar-inverse {
+  background: #000000;
+  border: none;
+  font-size: 16px;
+}
+/**
+ * 头部
+ */
+.hd {
+  background: #000000;
+  opacity: 0.7;
+}
+.nav-center {
+  width: 265px;
+  margin: 0 auto;
+}
+/**
+ * 文章
+ */
+.index-post-info {
+  background: #ffffff;
+  opacity: 0.9;
+}
+.post-brief {
+  width: 100%;
+  height: auto;
+}
+.post-brief h4 {
+  font-size: 16px;
+}
+.post-brief p {
+  font-size: 14px;
+}
+.post-brief-pic {
+  max-width: 100%;
+  height: 250px;
+  float: left;
+}
+.post-brief-cont {
+  width: 45%;
+  float: right;
+  overflow: hidden;
+}
+.post-brief-cont p {
+  line-height: 25px;
+  margin-bottom: none;
+  text-indent: 2em;
+  overflow: hidden;
+}
+.post-title {
+  line-height: 30px;
+  padding: 10px;
+}
+.post-title a {
+  color: #da6426;
+}
+.post-title a:hover {
+  color: #333333;
+}
+.post-tag {
+  clear: both;
+  line-height: 25px;
+  font-size: 12px;
+}
+.author-info {
+  height: 30px;
+  line-height: 30px;
+}
+.author-info span {
+  margin-left: 2px;
+  padding-left: 20px;
+}
+.icon-author {
+  background: url(../images/icon.png) no-repeat;
+  background-position: 0 0;
+}
+.icon-time {
+  background: url(../images/icon.png) no-repeat;
+  background-position: 0 -27px;
+}
+.icon-hot {
+  background: url(../images/icon.png) no-repeat;
+  background-position: 0 -50px;
+}
+.icon-comment {
+  background: url(../images/icon.png) no-repeat;
+  background-position: 0 -73px;
+}
+.jumbotron {
+  padding: 20px;
+}
+/**
+ * 侧边栏 sb = siderbar
+ */
+.sb-box {
+  background: #000000;
+  opacity: 0.7;
+  margin-top: 20px;
+}
+.sb-box .sb-cont {
+  font-size: 12px;
+  padding: 20px;
+}
+.sb-box .sb-cont a {
+  color: #da6426;
+}
+.sb-box .sb-cont a:hover {
+  color: white;
+  text-decoration: none;
+}
+.sb-box .sb-cont li {
+  _display: inline;
+  max-width: 14em;
+  white-space: nowrap;
+  _white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+.sb-box h4 {
+  font-size: 14px;
+  padding: none;
+  margin: 0;
+  padding: 10px 20px;
+  color: white;
+}
+.post-data {
+  display: block;
+  float: right;
+  font-size: 12px;
+  color: #999999;
+  margin-top: 2px;
+}
+.tag {
+  padding: 5px;
+  background: red;
+  display: inline;
+}
+.visitor {
+  padding-top: 10px;
+}
+.visitor li {
+  display: inline;
+  padding: 10px;
+}
+.img-circle {
+  width: 50px;
+  height: 50px;
+}
+.label {
+  line-height: 2.5;
+  margin: 0px 5px;
+  position: relative;
+  z-index: 99;
+}
+.sb-line {
+  border-bottom: 1px solid gray;
+}
+/**
+ * 尾部
+ */
+footer p {
+  text-align: center;
+}
+/**
+ * postDetail
+ */
+.local {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  background: #000000;
+  opacity: 0.7;
+  margin-bottom: 20px;
+  color: #da6426;
+}
+.local a {
+  color: #da6426;
+}
+.local a:hover {
+  text-decoration: none;
+  color: white;
+}
+.post-detail h4 {
+  text-align: center;
+  color: #da6426;
+  line-height: 40px;
+}
+.post-detail p {
+  font-size: 14px;
+  line-height: 25px;
+  margin-bottom: none;
+  text-indent: 2em;
+  overflow: hidden;
+}
+.post-detail .author-info {
+  text-align: center;
+}
+/**
+ * write post
+ */
+.weite-container,
+.write-title input,
+.write-content textarea {
+  width: 100%;
+}
+.write-title,
+.write-title input {
+  height: 40px;
+}
+.write-title input {
+  text-indent: 1.5em;
+  line-height: 40px;
+  outline: none;
+  border: none;
+  border-top: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+}
+.write-tags input {
+  float: left;
+  width: 25%;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-top: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+}
+.write-tags input:last-child {
+  outline: none;
+  border: none;
+  border-top: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+}
+.weite-container textarea {
+  line-height: 30px;
+  padding: 20px 30px;
+  outline: none;
+  border: none;
+  border: 1px solid #d9d9d9;
+}
+.write-send {
+  background: #da6426;
+  outline: none;
+}
+.write-send:hover {
+  background: #da6426;
+  outline: none;
+}
