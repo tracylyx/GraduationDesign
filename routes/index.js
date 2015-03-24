@@ -75,12 +75,12 @@ module.exports = function( app ) {
 		});
 	});
 
-	// 关于
+	// 关于我
 	app.get( '/about', checkLogin );
 	app.get( '/about', function( req, res ) {
 		res.render( 'about', {
-		 title: 'tracy木子-关于',
-		 local: '关于',
+		 title: 'tracy木子-关于我',
+		 local: '关于我',
 		 user: req.session.user,
 		 success: req.flash( 'success' ).toString(),
 		 error: req.flash( 'error' ).toString()
@@ -128,6 +128,48 @@ module.exports = function( app ) {
 	app.post( '/uploadPic', function( req, res ) {
 		req.flash( 'success', '图片上传成功~~' );
 		res.redirect( '/uploadPic' );
+	});
+
+	// // 用户页面的路由规则
+	// app.get( '/u/:name', function( req, res ) {		// 添加app.get( '/u/:name' )这个路由规则，用来处理用户页的请求，然后可以从数据库取得该用户的数据并渲染useruser.ejs模板，生成页面并显示给用户
+	// 	// 检查用户是否存在
+	// 	User.get( req.params.name, function( err, user ) {		// req.params用来处理/:***形式的请求
+	// 		if ( !user ) {
+	// 			req.flash( 'error', '用户不存现在！' );
+	// 			return res.redirect( '/' );		// 用户不存在则跳转到主页
+	// 		}
+	// 		// 查询并返回该用户的所有文章
+	// 		Post.getAll( user.name, function( err, posts ) {
+	// 			if ( err ) {
+	// 				req.flash( 'error', err );
+	// 				return res.redirect( '/' );
+	// 			}
+	// 			res.render( 'user', {
+	// 				title: user.name,
+	// 				posts: posts,
+	// 				user: req.flash( 'success' ).toString(),
+	// 				error: req.flash( 'error' ).toString()
+	// 			});
+	// 		})；
+	// 	});
+	// });
+	
+	// 文章页的路由规则
+	app.get( '/u/:name/:day/:title', function( req, res ) {
+		Post.getOne( req.params.name, req.params.day, req.params.title, function( err, post ) {
+			if ( err ) {
+				req.flash( 'error', err );
+				return res.redirect( '/' );
+			}
+			res.render( 'article', {
+				title: req.params.title,
+				local: '文章详情',
+				post: post,
+				user: req.session.user,
+				success: req.flash( 'success' ).toString(),
+				error: req.flash( 'error' ).toString()
+			});
+		});
 	});
 
 

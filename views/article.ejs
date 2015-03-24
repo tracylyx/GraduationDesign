@@ -1,0 +1,24 @@
+<%= include header %>
+<div class="container">
+	<div class="row">
+		<!-- 左侧 -->
+		<div class="col-xs-9">
+			<!-- 定位 -->
+			<%= include location %>
+			<div class="index-post-info jumbotron post-detail">
+				<h4><%= post.title %></h4>
+				<!-- author info -->
+				<div class="author-info">
+					<span class="icon-author"><%= post.name %></span>
+					<span class="icon-time"><%= post.time.minute %></span>
+					<span class="icon-hot">热度<em>100</em></span>
+					<span class="icon-comment">评论<em>100</em></span>
+				</div>
+				<p><%- post.post  %></p>
+			</div>
+		</div>
+		<!-- 右侧 -->
+		<%- include sidebar %>
+	</div>
+</div>
+<%= include footer %>

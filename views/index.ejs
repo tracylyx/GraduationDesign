@@ -6,7 +6,7 @@
 				<% posts.forEach( function( post, index ) { %>
 					<div class="jumbotron index-post-info">
 						<div class="post-brief cf">
-							<h4 class="post-title"><a href="###"><%= post.title %></a></h4>
+							<h4 class="post-title"><a href="u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h4>
 							<!-- post缩略图 -->
 							<div class="post-brief-pic">
 								<!-- 配图 -->
