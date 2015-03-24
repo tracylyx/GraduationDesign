@@ -226,9 +226,13 @@ module.exports = function( app ) {
 		});
 	});
 
-
-	
-
+	// 404的路由控制
+	app.use( function( req, res ) {
+		res.render( '404', {
+		 title: '404', 
+		 user: req.session.user,
+		});
+	});
 
 	// 未登录
 	function checkLogin( req, res, next ) {
