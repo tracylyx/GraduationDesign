@@ -7,7 +7,7 @@ var Post = require( '../models/post.js' );
 module.exports = function( app ) {
 	
 	app.get( '/', function( req, res ) {
-		Post.get( null, function( err, posts ) {
+		Post.getAll( null, function( err, posts ) {		// 函数位于post.js
 			if ( err ) {
 				posts = [];
 			}
