@@ -7,7 +7,10 @@ var Post = require( '../models/post.js' );
 module.exports = function( app ) {
 	
 	app.get( '/', function( req, res ) {
-		Post.getAll( null, function( err, posts ) {		// 函数位于post.js
+		// 判断是否是第一页，并把请求的页数转换成number类型
+		var page = req.query.p ? parseInt( req.query.p ) : 1;		// 转换成数字的形式使用
+		// 查询并返回第page页的10篇文章
+		Post.getTen( null, page, function( err, posts, total ) {		// 函数位于post.js
 			if ( err ) {
 				posts = [];
 			}
@@ -15,6 +18,10 @@ module.exports = function( app ) {
 			 title: 'tracy木子-首页',
 			 user: req.session.user,
 			 posts: posts,
+			 page: page,
+			 isFirstPage: ( page - 1 ) == 0,		// 第一页
+			 isLastPage: ( ( page - 1 ) * 10 + posts.length ) == total,		// 最后一页
+			 user: req.session.user,
 			 success: req.flash( 'success' ).toString(),		// 将成功的信息赋值给变量 success
 			 error: req.flash( 'error' ).toString()
 			 });		// 参数1：模板名称 参数2：传递给模板的数据对象

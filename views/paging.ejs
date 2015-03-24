@@ -1,0 +1,17 @@
+<nav class="nav-page-center">
+	<ul class="pagination">
+		<% if ( !isFirstPage ) { %>      <!-- 如果不是第一页 -->
+			<li class="disable"><a href="?p=<%= page - 1 %>">&laquo;</a></li>
+		<% } %>
+		
+		<li class="active"><a href="?p=<%= page %>">1</a></li>
+		<li class="disable"><a href="?p=<%= page %>">2</a></li>
+		<li class="disable"><a href="?p=<%= page %>">3</a></li>
+		<li class="disable"><a href="?p=<%= page %>">4</a></li>
+		<li class="disable"><a href="?p=<%= page %>">5</a></li>
+		<% if ( !isLastPage ) { %>    <!-- 如果不是最后页 -->
+			<li class="disable"><a href="?p=<%= page + 1 %>">&raquo;</a></li>
+		<% } %>
+
+	</ul>
+</nav>
