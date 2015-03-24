@@ -26,7 +26,8 @@ Post.prototype.save = function( callback ) {
 		name: this.name,
 		time: time,
 		title: this.title,
-		post: this.post
+		post: this.post,
+		pv: 0		// 记录pv数量
 	};
 	// 打开数据库
 	mongodb.open( function( err, db ) {
@@ -106,13 +107,28 @@ Post.getOne = function( name, day, title, callback ) {
 				'time.day': day,
 				'title': title
 			}, function( err, doc ) {
-				mongodb.close();
 				if ( err ) {
+					mongodb.close();
 					return callback( err );
 				}
-				// 解析markdown为html
-				doc.post = markdown.toHTML(doc.post);
-				callback( null, doc );		// 返回查询的一篇文章
+				if ( doc ) {
+					// 每访问1次，pv值增加1
+					collection.update({
+						'name': name,
+						'time.day': day,
+						'title': title
+					}, {
+						$inc: { 'pv': 1 }
+					}, function ( err ) {
+						mongodb.close();
+						if ( err ) {
+							return callback( err );
+						}
+					});
+					// 解析markdown为html
+					doc.post = markdown.toHTML(doc.post);
+					callback( null, doc );		// 返回查询的一篇文章
+				}
 			});
 		});
 	});
