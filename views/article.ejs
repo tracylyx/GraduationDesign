@@ -13,6 +13,10 @@
 					<span class="icon-time"><%= post.time.minute %></span>
 					<span class="icon-hot">热度<em>100</em></span>
 					<span class="icon-comment">评论<em>100</em></span>
+					<% if ( user && ( user.name == post.name ) ) { %>   <!-- 通过session中的用户名是否存在来判断和当前页面的作者名是否相同 -->
+						<span class="icon-comment"><a href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">编辑</a></span>
+						<span class="icon-comment"><a href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a></span>
+					<% } %>
 				</div>
 				<p><%- post.post  %></p>
 			</div>
