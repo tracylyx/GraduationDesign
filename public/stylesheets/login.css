@@ -11,3 +11,10 @@ h1 {
   text-align: center;
   padding-bottom: 20px;
 }
+.tips {
+  text-align: center;
+  line-height: 25px;
+}
+.red {
+  color: red;
+}

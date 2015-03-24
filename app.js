@@ -13,22 +13,20 @@ var flash = require('connect-flash');
 
 var flash = require('connect-flash');    /// flash是存放在session里的，通过他我们可以方便地实现页面的通知和错误信息显示功能
 var multer = require('multer');
-
 var app = express();
 
 /// all environments
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));  /// 设置模板引擎  __dirname 全局变量存储当前正在执行的脚本所在的目录。
 app.set('view engine', 'ejs');      // 真正指定使用哪个模板引擎的是通过这句设定                 /// 页面模板的存储位置
-app.use(flash());
-
-app.use(flash());      /// 安装flash模块
+app.use(flash());       // 安装flash模块
 app.use(multer({
     dest: './public/images',     /// dest是上传的文件所在的目录
     rename: function ( fieldname, filename ) {    /// rename函数用来修改上传后的文件名，这里设置保持原来的文件名
         return filename;
     }
-}))
+}));
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));   /// 加载日志中间件
@@ -83,8 +81,8 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.listen(3004, function() {
-    console.log('port at 3004~~~');
+app.listen(3000, function() {
+    console.log('port at 3000~~~');
 });
 
 

@@ -40,7 +40,7 @@ module.exports = function( app ) {
 		// 检查用户是否存在
 		User.get( req.body.name, function( err, user ) {
 			if ( !user ) {
-				req.flash( 'error', '用户不存在！' );
+				req.flash( 'error', '用户不存在,请重新输入！' );
 				return res.redirect( '/login' );		// 用户不存在则跳转到登录页
 			}
 			// 检查密码是否一致
@@ -113,7 +113,7 @@ module.exports = function( app ) {
 	});
 
 	// 上传图片
-	app.get( '/uploadPic', checkLogin );
+	app.get( '/uploadPic', checkLogin );		// 只有登录的用户才有权限上传文件
 	app.get( '/uploadPic', function( req, res ) {
 		res.render( 'uploadPic', {
 		 title: 'tracy木子-上传图片',
@@ -123,6 +123,13 @@ module.exports = function( app ) {
 		 error: req.flash( 'error' ).toString()
 		});
 	});
+	// 添加对上传文件的支持
+	app.post( '/uploadPic', checkLogin );
+	app.post( '/uploadPic', function( req, res ) {
+		req.flash( 'success', '图片上传成功~~' );
+		res.redirect( '/uploadPic' );
+	});
+
 
 	// 未登录
 	function checkLogin( req, res, next ) {

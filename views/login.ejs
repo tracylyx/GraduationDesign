@@ -17,6 +17,12 @@
 <body>
 	<div id="login">
 		<h1>Welcome Tracy</h1>
+		<% if ( success ) { %>
+			<div class="tips"><%= success %></div>
+		<% } %>
+		<% if ( error ) { %>
+			<div class="tips red"><%= error %></div>
+		<% } %>
 		<form class="form-horizontal" method="post">
 		  <div class="form-group">
 		    <label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
