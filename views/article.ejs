@@ -18,6 +18,14 @@
 						<span class="icon-comment"><a href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a></span>
 					<% } %>
 				</div>
+				<!-- 显示标签 -->
+				<% if ( post.tags ) { %>
+					<% post.tags.forEach( function( tag, index ) { %>
+						<% if ( tag ) { %>
+							<a href="/tags/<%= tag %>"><%= tag %></a>
+						<% } %>
+					<% }); %>
+				<% } %>
 				<p><%- post.post  %></p>
 			</div>
 		</div>
