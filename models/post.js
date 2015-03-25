@@ -183,7 +183,7 @@ Post.edit = function(name, day, title, callback) {
 	// 打开数据库
 	mongodb.open(function(err, db) {
 		if (err) {
-			mongodb.close();
+			// mongodb.close();
 			return callback(err);
 		}
 		// 读取posts集合
@@ -198,6 +198,7 @@ Post.edit = function(name, day, title, callback) {
 				'time.day': day,
 				'title': title
 			}, function(err, doc) {
+				mongodb.close();
 				if (err) {
 					return callback(err);
 				}
@@ -207,7 +208,7 @@ Post.edit = function(name, day, title, callback) {
 	});
 };
 
-// 更新一篇文章及其相关信息
+// 更新一篇文章及其相关信息. 将修改好的文章提交到数据库中
 Post.update = function(name, day, title, post, callback) {
 	// 打开数据库
 	mongodb.open(function(err, db) {
@@ -231,8 +232,8 @@ Post.update = function(name, day, title, post, callback) {
 					post: post
 				}
 			}, function(err) {
+				mongodb.close();
 				if (err) {
-					// mongodb.close();
 					return callback(err);
 				}
 				callback(null);
@@ -246,7 +247,7 @@ Post.remove = function(name, day, title, callback) {
 	// 打开数据库
 	mongodb.open(function(err, db) {
 		if (err) {
-			mongodb.close();
+			// mongodb.close();
 			return callback(err);
 		}
 		// 读取posts集合

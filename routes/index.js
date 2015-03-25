@@ -236,7 +236,7 @@ module.exports = function(app) {
 		var currentUser = req.session.user;
 		Post.remove(currentUser.naem, req.params.day, req.params.title, function(err) {
 			if (err) {
-				req.flash('error', err);
+				req.flash('error', '删除出错');
 				return res.redirect('back');
 			}
 			req.flash('success', '删除成功~~');
