@@ -1,0 +1,7 @@
+cannot-call-method-slice.png   应该是，js出这种错误一般就是因为调用slice的对象为null，posts里边的post为null,从而出现这样的情况
+
+Cannot call method 'forEach' of undefined   原因是你要foEach的对象不存在或者为空。最好做一次<% if (object) { %>或者<% if (object[0]) { %>的判断。  【tags在ejs中要判断一下】
+
+引用文件的顺序出错   app.js中var settings = require('./settings');var routes = require('./routes/index'); 这两者的顺序是index先引用
+
+middleware   不适用express.session  而是使用session  在app.js中

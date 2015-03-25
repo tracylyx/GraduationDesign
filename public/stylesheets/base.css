@@ -321,3 +321,9 @@ footer p {
   background: #da6426;
   outline: none;
 }
+/**
+ * search
+ */
+.input-group {
+  width: 100%;
+}

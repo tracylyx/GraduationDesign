@@ -1,13 +1,99 @@
-<%- include header %>
-<div class="container">
-	<div class="row">
-		<!-- 左侧 -->
-		<div class="col-xs-9">
-			<!-- 定位 -->
-			<%= include location  %>
-		</div>
-		<!-- 右侧 -->
-		<%- include sidebar %>
-	</div>
-</div>
-<%- include footer %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>    
+    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/resume.css">
+
+    <script type="text/javascript" src="javascripts/jquery-2.0.2.js"></script>
+    <script type="text/javascript" src="javascripts/base.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <h1>Who Am I</h1>
+                    <a href="#whoami" class="nav_whoami">view</a> 
+                </li>
+                <li>
+                    <h1>My Skills</h1>
+                    <a href="#myskills" class="nav_myskills">view</a>
+                </li>
+                <li>
+                    <h1>Experience</h1>
+                    <a href="#experience" class="nav_experience">view</a>
+                </li>
+                <li>
+                    <h1>Contact</h1>
+                    <a href="#contact" class="nav_contact">view</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 内容 -->
+        <div id="content">
+
+            <section id="whoami">    <!-- data-type="bg" data-speed="10" -->
+                <article>
+                	<img src="images/head_pic.png" alt="" class="head_logo">
+                    <h1>李炎霞</h1>
+                    <h1>前端开发工程师</h1>
+                    <div class="go"></div>        <!-- tip: 向下的箭头 -->
+                </article>
+            </section>
+
+            <section id="myskills">
+                <article>
+                    <canvas id="skills" width="300px" height="300px"></canvas>
+                </article>
+            </section>
+
+             <section id="experience">
+                <article>
+                    <a href="###"><img src="images/sc1.jpg" alt="1" class="project"></a>
+                    <!-- <div class="project-hover"></div> -->
+                    <a href="###"><img src="images/sc2.jpg" alt="2" class="project"></a>
+                    <!-- <div class="project-hover"></div> -->
+                    <a href="###"><img src="images/sc3.jpg" alt="3" class="project"></a>
+                    <!-- <div class="project-hover"></div> -->
+                    <a href="###"><img src="images/sc4.jpg" alt="4" class="project"></a>
+                    <!-- <div class="project-hover"></div> -->
+                </article>
+            </section>
+
+            <section id="contact">
+                <article>
+                    <h1>E-mail: 287033963@qq.com</h1>
+                    <h1>Tel: 155-2717-8473</h1>
+                    <h1></h1>
+                </article>
+            </section> 
+
+        </div>
+
+        <div id="page-1">
+            <img src="images/yun-1.png" width="249px" height="112px" alt="yun-1">
+            <img src="images/yun-2.png" width="276px" height="108px" alt="yun-2">
+            <img src="images/yun-3.png" width="114px" height="54px" alt="yun-3">
+        </div>
+        <div id="page-2">
+            <img src="images/yun-4.png" width="162px" height="76px" alt="yun-4">
+            <img src="images/yun-5.png" width="124px" height="76px" alt="yun-5">
+        </div>
+        <div id="page-3">
+            <img src="images/yun-6.png" width="200px" height="70px" alt="yun-6">
+            <img src="images/yun-7.png" width="84px" height="48px" alt="yun-7">
+        </div>
+        <div id="page-4">
+            <img src="images/yun-8.png" width="164px" height="52px" alt="yun-8">
+            <img src="images/yun-9.png" width="150px" height="74px" alt="yun-9">
+            <img src="images/yun-10.png" width="264px" height="90px" alt="yun-10">
+            <img src="images/square.png" width="1200px" height="234px" alt="aquare">
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>

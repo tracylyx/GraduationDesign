@@ -1,0 +1,62 @@
+/*
+ author: 李炎霞 ;
+ date:2014-09-23 ;
+ update: 2014-09-23 ;
+ file: “我的简历”页面的样式 ;
+*/
+
+body { font-family: "宋体"; background: #cddff3; }
+h1 { color: #ffffff; font-size: 24px; /*line-height: 37px;*/ color: #666666; padding-top: 46px; }
+
+/* 导航 */
+#navbar { z-index: 5; position: fixed; top: 50%; right: 20px; margin-top: -40px; }
+#navbar li { position: relative; height: 16px; padding: 7px 0px; }
+#navbar a { display: block; background: red;  /* 因为a是行内元素 */ width: 16px; height: 16px; text-indent: -9999px; background: url(../images/little-pic.png) 0 -112px no-repeat; } 
+#navbar a:hover, #navbar .active { background: url(../images/little-pic.png) 0 -128px no-repeat; }
+#navbar h1 { color: white; position: absolute; right: 25px; top: -45px; padding-left: 8px; padding-right: 20px; line-height: 28px; display: none; white-space: nowrap; font-size: 14px; background: url(../images/arrow.png) 100% 100% no-repeat; }
+
+#whoami { min-height: 1000px; margin: 0 auto; width: 100%; max-width: 1900px; position: relative; }
+#whoami article { height: 458px; position: absolute; text-align: center; width: 100%; }
+.go { width:70px; height: 56px; margin: 97px auto 0; background: url(../images/little-pic.png) 0px 0px no-repeat; }
+.go:hover { width:70px; height: 56px; margin: 97px auto 0; background: url(../images/little-pic.png) 0px -56px no-repeat; 
+			 opacity: 0.5; /* 标准浏览器 */ filter: alpha(opacity = 50); transition: 0.3s; }
+
+
+#myskills { min-height: 1000px; margin: 0 auto; width: 100%; max-width: 1900px; position: relative; }
+#myskills article { height: 458px; position: absolute; text-align: center; top: 200px; width: 100%; }
+
+#experience { min-height: 1000px; margin: 0 auto; width: 100%; max-width: 1900px; position: relative; }
+#experience article { height: 458px; position: absolute; text-align: center; top: 200px; width: 100%; }
+.project { padding: 0 5px; width: 300px; height: 300px; }
+.project-hover { width: 300px; height: 300px; background: black; filter: 0.5; }
+
+#contact { min-height: 800px; margin: 0 auto; width: 100%; max-width: 1900px; position: relative; }
+#contact article { height: 458px; position: absolute; text-align: center; top: 200px; width: 100%; }
+
+/*nav ul { list-style: none; height: 60px; }
+nav ul li { float: left; padding: 0 15px; line-height: 60px; }
+nav a { color: #000000; text-decoration: none; }*/
+
+.head_logo { width: 150px; height: 150px; border-radius: 100px; margin-top: 120px; }
+
+
+/* 定位图片 */
+#page-1 { z-index: 1; position: fixed; left: 50%; top: 0; width: 1200px; margin-left: -600px; }
+#page-1 img:nth-child(1) { position: absolute; top: 160px; left: 100px;  }
+#page-1 img:nth-child(2) { position: absolute; top: 110px; left: 800px;  }
+#page-1 img:nth-child(3) { position: absolute; top: 414px; left: 800px;  }
+
+#page-2 { z-index: 2; position: fixed; left: 50%; top: 0; width: 1200px; margin-left: -600px; }
+#page-2 img:nth-child(1) { position: absolute; top: 900px; left: 965px;  }
+#page-2 img:nth-child(2) { position: absolute; top: 1000px; left: 100px;  }
+
+#page-3 { z-index: 3; position: fixed; left: 50%; top: 0; width: 1200px; margin-left: -600px; }
+#page-3 img:nth-child(1) { position: absolute; top: 1400px; left: 238px; }
+#page-3 img:nth-child(2) { position: absolute; top: 1800px; left: 850px; }
+
+
+#page-4 { z-index: 4; position: fixed; left: 50%; top: 0; width: 1200px; margin-left: -600px; }
+#page-4 img:nth-child(1) { position: absolute; top: 2320px; left: 270px;  }
+#page-4 img:nth-child(2) { position: absolute; top: 2000px; left: 130px;  }
+#page-4 img:nth-child(3) { position: absolute; top: 2110px; left: 904px;  }
+#page-4 img:nth-child(4) { position: absolute; top: 2490px; left: 0px;  }
