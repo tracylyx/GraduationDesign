@@ -18,44 +18,46 @@
 			var widthMatch768 = window.matchMedia("(min-width: 400px and max-width: 1024px)").matches;		// boolean值
 			var widthMatch1024 = window.matchMedia("(min-width: 1024px)").matches;		// boolean值
 			if ( widthMatch400 ) {
-				var light = true;
+				// var light = true;
 				var getHead = document.getElementsByTagName( 'head' )[0];
 				var createLink = document.createElement( 'link' );
 				createLink.rel = 'stylesheet';
 				createLink.type = 'text/css';
 				createLink.href = 'matchMedia/a.css';
 				getHead.appendChild( createLink );
-				if ( light ) {
-					window.location.reload( light );
-				}
-				light = false;
-				return light;
+				location.reload();
+				// if ( light ) {
+				// 	window.location.reload( light );
+				// }
+				// light = false;
+				// return light;
 			} else if ( widthMatch768 ) {
-				var litht = true;
+				// var litht = true;
 				var getHead = document.getElementsByTagName( 'head' )[0];
 				var createLink = document.createElement( 'link' );
 				createLink.rel = 'stylesheet';
 				createLink.type = 'text/css';
 				createLink.href = 'matchMedia/b.css';
 				getHead.appendChild( createLink );
-				if ( light ) {
-					window.location.reload( light );
-				}
-				light = false;
-				return light;
+				// if ( light ) {
+				// 	window.location.reload( light );
+				// }
+				// light = false;
+				// return light;
 			} else if ( widthMatch1024 ) {
-				var light = true;
+				// var light = true;
 				var getHead = document.getElementsByTagName( 'head' )[0];
 				var createLink = document.createElement( 'link' );
 				createLink.rel = 'stylesheet';
 				createLink.type = 'text/css';
 				createLink.href = 'matchMedia/c.css';
 				getHead.appendChild( createLink );
-				if ( light ) {
-					window.location.reload();
-				}
-				light = false;
-				return light;
+				
+				// if ( light ) {
+				// 	window.location.reload();
+				// }
+				// light = false;
+				// return light;
 			}
 
 		};

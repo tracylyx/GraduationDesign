@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>matchMedia</title>
+	<!-- <link rel="stylesheet" type="text/css" href="matchMedia/a.css"> -->
+	<script>
+		window.onload = function() {
+			var getHead = document.getElementsByTagName( 'head' )[0];
+			var createLink = document.createElement( 'link' );
+			createLink.rel = 'stylesheet';
+			createLink.type = 'text/css';
+
+			var widthMatch400 = window.matchMedia("(max-width: 400px)");	
+			var widthMatch768 = window.matchMedia("(min-width: 768px)");	
+			var widthMatch1024 = window.matchMedia("(min-width: 1024px)");
+			
+			if ( widthMatch400.matches ) {
+				widthMatch400.addListener( useCssA );
+			} else if ( widthMatch768.matches ) {
+				widthMatch768.addListener( useCssB );
+			} else if ( widthMatch1024.matches ) {
+				widthMatch1024.addListener( useCssC );
+			}
+
+			// widthMatch400.addListener( useCssA );
+			// widthMatch768.addListener( useCssB );
+			// widthMatch1024.addListener( useCssC );
+
+			function useCssA ( mediaQueryList ) {
+				createLink.href = 'matchMedia/a.css';
+				getHead.appendChild( createLink );
+			}
+
+			function useCssB ( mediaQueryList ) {
+				createLink.href = 'matchMedia/b.css';
+				getHead.appendChild( createLink );
+			}
+
+			function useCssC ( mediaQueryList ) {
+				createLink.href = 'matchMedia/c.css';
+				getHead.appendChild( createLink );
+			}
+		};
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
