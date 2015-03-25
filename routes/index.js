@@ -137,6 +137,23 @@ module.exports = function( app ) {
 		res.redirect( '/uploadPic' );
 	});
 
+	// 添加查询的路由规则
+	app.get( '/search', function ( req, res ) {
+		Post.search( req.query.key, function( err, posts ) {
+			if ( err ) {
+				req.flash( 'error', err );
+				return res.redirect( '/' );
+			}
+			res.render( 'search', {
+				title: '全站搜索' + req.query.key,
+				posts: posts,
+				user: req.session.user,
+				success: req.flash( 'success' ).toString(),
+				error: req.flash( 'error' ).toString()
+			});
+		});
+	});
+
 	// // 用户页面的路由规则
 	// app.get( '/u/:name', function( req, res ) {		// 添加app.get( '/u/:name' )这个路由规则，用来处理用户页的请求，然后可以从数据库取得该用户的数据并渲染useruser.ejs模板，生成页面并显示给用户
 	// 	// 检查用户是否存在
@@ -202,7 +219,7 @@ module.exports = function( app ) {
 	app.post( '/edit/:name/:day/:title', function( req, res ) {
 		var currentUser = req.session.user;
 		Post.update( currentUser.name, req.params.day, req.params.title,  req.body.post, function( err ) {
-			var url = encodeURI( '/u' + req.params.name + '/' + req.params.day + '/' + req.params.title);
+			var url = encodeURI( '/u/' + req.params.name + '/' + req.params.day + '/' + req.params.title);
 			if ( err ) {
 				req.flash( 'error', err );
 				return res.redirect( url );		// 出错！返回文章页

@@ -1,6 +1,9 @@
 <nav class="nav-page-center">
 	<ul class="pagination">
+		<% console.log( page ) %>
+
 		<% if ( !isFirstPage ) { %>      <!-- 如果不是第一页 -->
+		<% console.log( page ) %>
 			<li class="disable"><a href="?p=<%= page - 1 %>">&laquo;</a></li>
 		<% } %>
 		

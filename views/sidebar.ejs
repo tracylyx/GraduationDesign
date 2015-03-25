@@ -1,10 +1,12 @@
 <div class="col-xs-3">
 	<!-- 本站搜索 -->
 	<div class="input-group">
-		<input type="text" class="form-control" placeholder="输入要查找的内容">
-		<span class="input-group-btn">
-			<button class="btn btn-reverse" type="button">Go!</button>
-		</span>
+		<form action="/search" method="get">
+			<input type="text" name="key" class="form-control" placeholder="输入要查找的内容">
+			<span class="input-group-btn">
+				<button class="btn btn-reverse" type="button">Go!</button>
+			</span>
+		</form>		
 	</div>
 	<!-- 近期文章 -->
 	<div class="sb-box">
