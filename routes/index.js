@@ -106,8 +106,8 @@ module.exports = function(app) {
 	app.post('/post', checkLogin);
 	app.post('/post', function(req, res) {
 		var currentUser = req.session.user;
-		var tags = [ req.body.tag1, req.body.tags2, req.body.tags3 ];
-		var post = new Post(currentUser.name, req.body.title, req.body.post);
+		var tags = [ req.body.tag1, req.body.tags2, req.body.tags3, req.body.tags4 ];
+		var post = new Post(currentUser.name, req.body.title, tags, req.body.post);
 		post.save(function(err) {
 			if (err) {
 				req.flash('error', err);
@@ -150,6 +150,24 @@ module.exports = function(app) {
 				user: req.session.user,
 				success: req.flash('success').toString(),
 				error: req.flash('error').toString()
+			});
+		});
+	});
+
+	// 存档的路由规则
+	app.get('/archive', function (req, res) {
+		Post.getArchive(function (err, posts) {
+			if (err) {
+				req.flash('error', err);
+				return res.redirect('/');
+			}
+			res.render('archive', {
+				title: 'tracy木子-存档',
+				local: '存档',
+				posts: posts,
+				user: req.session.user,
+				success: req.flash('success').toString(),
+				error: req.flash('error').toString(),
 			});
 		});
 	});
