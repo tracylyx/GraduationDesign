@@ -6,13 +6,13 @@
 			<!-- 定位 -->
 			<%= include location %>
 			<div class="jumbotron index-post-info">
-				<ul>
+				<ul class="archive">
 					<% var lastYear = 0 %> 		<!-- 设定一个变量，用来判断是否和上次已经显示的年份相同，相同的不在显示年份，不通则显示 -->
 					<% posts.forEach(function (post, index) { %>
 						<% if (lastYear != post.time.year) { %>
 							<li><h3><%= post.time.year %></h3></li>
 						<% lastYear = post.time.year } %> 		<!-- 通过这句来重新赋值lastYear，从而进行比较 -->
-						<li><a href="/u/<%= post.name %>/<%= post.day %>/<%= post.title %>"><%= post.title %></a><span><%= post.time.day %></span></li>
+						<li><a href="/u/<%= post.name %>/<%= post.day %>/<%= post.title %>"><%= post.title %></a><span class='archive-time'><%= post.time.day %></span></li>
 					<% }) %>
 				</ul>
 			</div>
