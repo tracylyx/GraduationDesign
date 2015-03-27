@@ -12,7 +12,17 @@
 	<div class="sb-box">
 		<h4 class="sb-line">近期文章</h4>
 		<ul class="sb-cont">
-			<li>
+		<% posts.forEach(function(post, index) { %>
+		<% var count = 4 %>
+			<% if (count--) { %>
+				<li>
+					<a href="u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a>
+					<span class="post-data"><%= post.time.day %></span>
+				</li>
+			<% } %>
+		<% }) %>
+
+			<!-- <li>
 				<a href="###">js 如何实现暂停和继续功能</a>
 				<span class="post-data">2015-1-16</span>
 			</li>
@@ -31,7 +41,7 @@
 			<li>
 				<a href="###">调整php-fpm进程数之后，为什么负载飙升的厉害</a>
 				<span class="post-data">2015-1-16</span>
-			</li>
+			</li> -->
 		</ul>
 	</div>
 

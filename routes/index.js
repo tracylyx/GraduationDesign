@@ -144,7 +144,7 @@ module.exports = function(app) {
 				return res.redirect('/');
 			}
 			res.render('search', {
-				title: '全站搜索' + req.query.key,
+				title: 'tracy木子-搜索结果',
 				local: '搜索结果',
 				posts: posts,
 				user: req.session.user,
