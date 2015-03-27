@@ -180,6 +180,10 @@ li {
 .jumbotron {
   padding: 20px;
 }
+.post-box {
+  height: 214px;
+  overflow: hidden;
+}
 /**
  * 侧边栏 sb = siderbar
  */
@@ -201,12 +205,7 @@ li {
 }
 .sb-box .sb-cont li {
   _display: inline;
-  max-width: 14em;
-  white-space: nowrap;
-  _white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
+  line-height: 25px;
 }
 .sb-box h4 {
   font-size: 14px;
@@ -215,12 +214,19 @@ li {
   padding: 10px 20px;
   color: white;
 }
+.sb-box .sb-post-title {
+  float: left;
+  max-width: 12em;
+  white-space: nowrap;
+  _white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
 .post-data {
-  display: block;
   float: right;
   font-size: 12px;
   color: #999999;
-  margin-top: 2px;
 }
 .tag {
   padding: 5px;

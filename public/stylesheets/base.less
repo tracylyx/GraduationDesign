@@ -203,6 +203,10 @@ ul, li {
 .jumbotron {
 	padding: 20px;
 }
+.post-box {
+	height: 214px;
+	overflow: hidden;
+}
 
 
 /**
@@ -226,13 +230,7 @@ ul, li {
 		li {
 			// float: left;
 			_display: inline;
-			max-width: 14em;
-			white-space: nowrap;
-			_white-space: normal;
-			// _height: 20px;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			-o-text-overflow: ellipsis;
+			line-height: 25px;
 		}
 	}
 	h4 {
@@ -242,14 +240,21 @@ ul, li {
 		padding: @space10 @space20;
 		color: white;
 	}
+	.sb-post-title {
+		float: left;
+		max-width: 12em;		// 控制标题显示的最大长度
+		white-space: nowrap;	// 超出最大长度就隐藏处理，一下5行
+		_white-space: normal;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+	}
 }
 // .test { width: 80%; text-overflow: clip; white-space: nowrap; overflow: hidden; }
 .post-data {
-	display: block;
 	float: right;
 	.font12();
 	color: #999999;
-	margin-top: 2px;
 }
 .tag {
 	padding: 5px;
