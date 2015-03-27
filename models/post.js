@@ -4,7 +4,7 @@ var markdown = require('markdown').markdown;
 function Post(name, title, tags, post) {
 	this.name = name;
 	this.title = title;
-	this.tags = tags
+	this.tags = tags;
 	this.post = post;
 };
 
@@ -249,7 +249,6 @@ Post.remove = function(name, day, title, callback) {
 	// 打开数据库
 	mongodb.open(function(err, db) {
 		if (err) {
-			// mongodb.close();
 			return callback(err);
 		}
 		// 读取posts集合
@@ -302,6 +301,37 @@ Post.search = function(key, callback) {
 					return callback(err);
 				}
 				callback(null, docs);
+			});
+		});
+	});
+};
+
+// 返回所有文章存档信息
+Post.getArchive = function(callback) {
+	// 打开数据库
+	mongodb.open(function(err, db) {
+		if (err) {
+			return callback(err);
+		}
+		// 读取posts集合
+		db.collection('posts', function(err, collection) {
+			if (err) {
+				mongodb.close();
+				return callback(err);
+			}
+			// 只返回包含name、time、title属性的文档组成的存档数组
+			collection.find({}, {
+				'name': 1,
+				'time': 1,
+				'title': 1
+			}).sort({
+				time: -1 		// 降序排列
+			}).toArray(function(err, docs) {
+				mongodb.close();
+				if (err) {
+					return callback(err);
+				}
+				callback(null,docs);
 			});
 		});
 	});

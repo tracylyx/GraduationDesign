@@ -327,3 +327,35 @@ footer p {
 .input-group {
   width: 100%;
 }
+/**
+ * paging 翻页
+ */
+.nav-page-center ul {
+  padding-left: 50%;
+}
+.nav-page-center li:last-child {
+  margin-left: 1em;
+}
+.previous_page {
+  background: url(../images/paging.png) no-repeat;
+  background-position: 0px -44px;
+  display: block;
+}
+.next_page {
+  background: url(../images/paging.png) no-repeat;
+}
+.previous_page a,
+.next_page a {
+  width: 44px;
+  height: 44px;
+  text-indent: -9999px;
+}
+/**
+ * archive
+ */
+.archive li {
+  line-height: 25px;
+}
+.archive-time {
+  float: right;
+}
