@@ -60,14 +60,35 @@ ul, li {
 	font-size: 16px;
 }
 .to-top {
-	width: @w-h50;
-	height: @w-h50;
-	background: blue;
+	width: @w-h50 - 6px;
+	height: @w-h50 - 6px;
+	background: url(../images/paging.png) no-repeat 0px 0px;
 	position: fixed;
-	right: @r50 - 40px;
-	bottom: 10px;
+	right: @r50 - 20px;
+	bottom: 30px;
 	display: none;
 	cursor: pointer;
+	text-indent: -9999px;
+	-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			-o-transform: rotate(-90deg);
+			-ms-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+}
+.to-top:hover {
+	width: @w-h50 - 6px;
+	height: @w-h50 - 6px;
+	background: url(../images/paging.png) no-repeat 0px -44px;
+	position: fixed;
+	right: @r50 - 20px;
+	bottom: 20px;
+	display: none;
+	cursor: pointer;
+	-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			-o-transform: rotate(-90deg);
+			-ms-transform: rotate(-90deg);
+			transform: rotate(-90deg);
 }
 .weibo {
 	width: @w-h50;
@@ -368,26 +389,47 @@ footer p {
 }
 
 /**
- * paging 翻页
+ * paging
  */
-.nav-page-center ul {
-	padding-left: 50%;
+.paging-center {
+	width: 100px;
+	height: 44px;
+	margin: 0 auto;
 }
-.nav-page-center li:last-child {
-	margin-left: 1em;
+.paging-center li {
+	display: inline;
 }
-.previous_page {
-	background: url(../images/paging.png) no-repeat;
-	background-position: 0px -44px;
-	display: block;
-}
-.next_page {
-	background: url(../images/paging.png) no-repeat;
-}
-.previous_page a, .next_page a {
+.paging-center li a {
 	width: 44px;
 	height: 44px;
+}
+.previous_page {
+	width: 44px;
+	height: 44px;
+	background: url(../images/paging.png) no-repeat 0px 0px;
+	-webkit-transform: rotate(180deg);
+			-moz-transform: rotate(180deg);
+			-o-transform: rotate(180deg);
+			-ms-transform: rotate(180deg);
+			transform: rotate(180deg);
 	text-indent: -9999px;
+	overflow: hidden;
+	display: inline-block;
+}
+.previous_page:hover {
+	background: url(../images/paging.png) no-repeat 0px -44px;
+
+}
+.next_page {
+	width: 44px;
+	height: 44px;
+	background: url(../images/paging.png) no-repeat 0px 0px;
+	text-indent: -9999px;
+	overflow: hidden;
+	display: inline-block;
+}
+.next_page:hover {
+	background: url(../images/paging.png) no-repeat 0px -44px;
 }
 
 /**
@@ -399,3 +441,7 @@ footer p {
 .archive-time {
  	float: right;
  }
+
+ /**
+  * search
+  */
