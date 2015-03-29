@@ -47,9 +47,9 @@
 				<h4 class="sb-line">近期文章</h4>
 				<ul class="sb-cont cf">
 				<% posts.forEach(function(post, index) { %>
-				<% var count = 4 %>
+				<% var count = 5 %>
 					<% if (count--) { %>
-						<li>
+						<li class="cf">
 							<a href="u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>" title="<%= post.title %>" class="sb-post-title"><%= post.title %></a>
 							<span class="post-data"><%= post.time.day %></span>
 						</li>
