@@ -177,6 +177,14 @@ li {
   background: url(../images/icon.png) no-repeat;
   background-position: 0 -73px;
 }
+.icon-edit {
+  background: url(../images/edit.png) no-repeat;
+  background-position: 0 0;
+}
+.icon-del {
+  background: url(../images/edit.png) no-repeat;
+  background-position: 0 -19px;
+}
 .jumbotron {
   padding: 20px;
 }

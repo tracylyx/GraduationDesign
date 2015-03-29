@@ -6,19 +6,34 @@
 			<!-- 定位 -->
 			<%= include location %>
 			<div class="jumbotron index-post-info">
-				<ul class="archive">
-				<% var lastYear = 0 %>
-				<% posts.forEach(function (post, index) { %>
-				  <% if(lastYear != post.time.year) { %>
-				    <li><h3><%= post.time.year %></h3></li>		<!-- 如果不是同一年份，就要显示年份 -->
-				  <% lastYear = post.time.year } %>
-				    <li><time><%= post.time.day %></time></li>
-				    <li class="title-border"><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></li>
-				<% }) %>
-				</ul>
+				<% if ( posts.length ) { %>
+					<ul class="archive">
+					<% var lastYear = 0 %>
+					<% posts.forEach(function (post, index) { %>
+					  <% if(lastYear != post.time.year) { %>
+					    <li><h3><%= post.time.year %></h3></li>		<!-- 如果不是同一年份，就要显示年份 -->
+					  <% lastYear = post.time.year } %>
+					    <li><time><%= post.time.day %></time></li>
+					    <li class="title-border"><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></li>
+					    <% }) %>
+					</ul>
+				<% } else { %>
+					<img src="../images/snap-logo.png" alt="未找到匹配内容" class="snap">
+					<h4 style="line-height: 50px;">SRY，未找到匹配内容，请重新搜索~~~</h4>
+				<% } %>
 			</div>
 		</div>
 		<!-- 右侧 -->
+		<div class="col-xs-3">
+			<!-- 本站搜索 -->
+			<div class="input-group">
+				<form action="/search" method="get">
+					<input type="text" name="key" class="form-control" placeholder="输入要查找的内容">
+					<!-- <span class="input-group-btn">
+						<button class="btn btn-reverse" type="button">Go!</button>
+					</span> -->
+				</form>		
+			</div>
 		<%- include sidebar %>
 	</div>
 </div>

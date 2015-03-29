@@ -12,10 +12,10 @@
 					<span class="icon-author"><%= post.name %></span>
 					<span class="icon-time"><%= post.time.minute %></span>
 					<span class="icon-hot">热度<em><%= post.pv %></em></span>
-					<span class="icon-comment">评论<em>22</em></span>
+					<!-- <span class="icon-comment">评论<em>22</em></span> -->
 					<% if ( user && ( user.name == post.name ) ) { %>   <!-- 通过session中的用户名是否存在来判断和当前页面的作者名是否相同 -->
-						<span class="icon-comment"><a href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">编辑</a></span>
-						<span class="icon-comment"><a href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a></span>
+						<span class="icon-edit"><a href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">编辑</a></span>
+						<span class="icon-del"><a href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a></span>
 					<% } %>
 				</div>
 				<!-- 显示标签 -->
@@ -31,6 +31,15 @@
 		</div>
 		<!-- 右侧 -->
 		<div class="col-xs-3">
+			<!-- 本站搜索 -->
+			<div class="input-group">
+				<form action="/search" method="get">
+					<input type="text" name="key" class="form-control" placeholder="输入要查找的内容">
+					<!-- <span class="input-group-btn">
+						<button class="btn btn-reverse" type="button">Go!</button>
+					</span> -->
+				</form>		
+			</div>
 		<%- include sidebar %>
 	</div>
 </div>
