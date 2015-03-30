@@ -180,6 +180,34 @@ Post.getOne = function(name, day, title, callback) {
 	});
 };
 
+// 获取topFive
+Post.getTopFive = function(name, time, callback) {
+	mongodb.open(function(err, db) {
+		if (err) {
+			return callback(err);
+		}
+		// 读取posts集合
+		db.collection('posts', function(err, collection) {
+			if (err) {
+				mongodb.close();
+				return callback();
+			}
+			// 根据用户名、发表日期及文章名进行查询
+			collection.find({
+				limit: 5
+			}).sort({
+				time: -1
+			}).toArray(function(err, docs) {
+				mongodb.close();
+				if (err) {
+					return callback(err);
+				}
+				callback(null, docs);
+			});
+		});
+	});
+}
+
 //返回原始发表的内容（markdown格式）
 Post.edit = function(name, day, title, callback) {
 	// 打开数据库

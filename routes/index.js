@@ -7,6 +7,16 @@ var Post = require('../models/post.js');
 module.exports = function(app) {
 
 	app.get('/', function(req, res) {
+		// topFive
+		Post.getTopFive(null, time, function(err, posts) {
+			if (err) {
+				posts = [];
+			}
+			res.render('index', {
+				topF: posts
+			});
+		});
+
 		// 判断是否是第一页，并把请求的页数转换成number类型
 		var page = req.query.p ? parseInt(req.query.p) : 1; // 转换成数字的形式使用
 		// 查询并返回第page页的10篇文章
