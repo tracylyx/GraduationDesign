@@ -1,5 +1,5 @@
 ### 毕业设计——个人博客设计与实现
-> 使用node+express搭建博客框架，使用ejs模板进行页面渲染，mongoDB作为数据库
+> 使用node+express搭建博客框架，使用ejs模板进行页面渲染，mongoDB作为数据库.tracy blog
 
 #### 1.目前实现的功能
 - 登录
