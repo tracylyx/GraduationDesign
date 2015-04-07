@@ -276,6 +276,8 @@ ul, li {
 		display: inline;
 		padding: 10px;	
 	}
+	img { transition: transform .4s ease-out; }
+	img:hover { transform: rotate(360deg); }
 }
 .img-circle {
 	width: @w-h50;
@@ -399,7 +401,36 @@ footer p {
  */
 .input-group {
 	width: 100%;
+	height: 50px; 
+	margin: 0 auto;
+	input { width: 40px; height: 30px; transition: width 2s; z-index: 1000; position: absolute; }
+	input:hover { width: 100%; }
 }
+.share {
+	padding-left: 50px;
+	i { text-indent: -9999px; width: 35px; height: 35px; display: block; float: left; }
+	.xl { background: url(share.png) -67px -17px; }
+	.xl:hover { background: url(share.png) -127px -17px; }
+	.wb { background: url(share.png) -190px -17px; }
+	.wb:hover { background: url(share.png) -250px -17px; }
+	.tx { background: url(share.png) -310px -17px; }
+	.tx:hover { background: url(share.png) -370px -17px; }
+	.kj { background: url(share.png) -426px -17px; }
+	.kj:hover { background: url(share.png) -486px -17px; }
+}
+// .box { width: 300px; height: 50px; margin: 0 auto;/* background: blue;*/ }
+// input { width: 40px; height: 30px; transition: width 2s; z-index: 1000; position: absolute; }
+// input:hover { width: 300px; }
+// .share { padding-left: 50px; }
+// i { text-indent: -9999px; width: 35px; height: 35px; display: block; float: left; }
+// .xl { background: url(share.png) -67px -17px; }
+// .xl:hover { background: url(share.png) -127px -17px; }
+// .wb { background: url(share.png) -190px -17px; }
+// .wb:hover { background: url(share.png) -250px -17px; }
+// .tx { background: url(share.png) -310px -17px; }
+// .tx:hover { background: url(share.png) -370px -17px; }
+// .kj { background: url(share.png) -426px -17px; }
+// .kj:hover { background: url(share.png) -486px -17px; }
 
 /**
  * paging
