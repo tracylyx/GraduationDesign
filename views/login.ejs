@@ -16,41 +16,26 @@
 </head>
 <body>
 	<div id="login">
-		<h1>Welcome Tracy</h1>
-		<% if ( success ) { %>
-			<div class="tips"><%= success %></div>
+		<!-- <% if ( success ) { %>
+		  <div class="tips"><%= success %></div>
 		<% } %>
 		<% if ( error ) { %>
-			<div class="tips red"><%= error %></div>
-		<% } %>
-		<form class="form-horizontal" method="post">
-		  <div class="form-group">
-		    <label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
-		    <div class="col-sm-9">
-		      <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="用户名">
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <label for="inputPassword3" class="col-sm-3 control-label">密码</label>
-		    <div class="col-sm-9">
-		      <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="密码">
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <div class="col-sm-offset-2 col-sm-10">
-		      <div class="checkbox">
-		        <label>
-		          <input type="checkbox"> 记住我
-		        </label>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <div class="col-sm-offset-2 col-sm-10">
-		      <button type="submit" class="btn btn-default">登录</button>
-		    </div>
-		  </div>
-		</form>
+		  <div class="tips red"><%= error %></div>
+		<% } %> -->
+		<div class="login-head"></div>
+		<div class="login-cont">
+			<div class="login-title">
+				<h4>Welcom Tracy</h4>
+			</div>
+			<form method="post" class="login-box">
+				<input type="text" class="user-name" name="name" placeholder="用户名">
+				<input type="password" class="user-pass" name="password" placeholder="密码"><br>
+				<button type="submit" class="user-sub">登录</button>
+				<!-- <input type="submit" class="user-sub" placeholder="登录"> -->
+			</form>
+		</div>
+		<div class="login-foot"></div>
+		
 	</div>
 	<script type="text/javascript" src="javascripts/bootstrap.js"></script>
 </body>

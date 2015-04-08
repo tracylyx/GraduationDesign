@@ -1,23 +1,65 @@
 /**
  * 登录
  */
-@size: 420px;
+@size: 312px;
 @orange: #da6426;
+h1, h2, h3, h4, h5 h6 { padding: 0; margin: 0; }
+body { 	background-color: #efefef; font-family: "微软雅黑"; }
 #login {
 	width: @size;
-	height: auto;
+	height: 291px;
 	margin: 50px  auto 0;
-	// background: green;
+}
+h4 { text-align: center; line-height: 60px; }
+.login-head {
+	width: @size;
+	height: 6px;
+	background: url(../images/login-head.png);
+}
+.login-cont {
+	width: @size - 2px;
+	height: 274px;
+	border-left: 1px solid #afafaf;;
+	border-right: 1px solid #afafaf;
+	background-color: #ffffff;
+}
+.login-foot {
+	width: @size;
+	height: 11px;
+	background: url(../images/login-footer.png);
+}
+.login-box {
+	width: @input-width;
+	height: auto;
+	margin: 0 auto;
+}
+@input-width: 248px;
+@input-height: 35px;
+.user-name {
+	width: @input-width;
+	height: @input-height;
+	margin-bottom: 11px;
+	outline: none;
+	text-indent: 1em;
+}
+.user-pass {
+	width: @input-width;
+	height: @input-height;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	outline: none;
+	text-indent: 1em;
+}
+.user-sub {
+	width: @input-width;
+	height: @input-height;
+	outline: none;
+	border: none;
+	background: @orange;
+	color: #ffffff;
 }
 h1 {
 	color: @orange;
 	text-align: center;
 	padding-bottom: 20px;
-}
-.tips {
-	text-align: center;
-	line-height: 25px;
-}
-.red {
-	color: red;
 }
