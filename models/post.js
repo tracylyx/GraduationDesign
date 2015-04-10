@@ -1,4 +1,4 @@
-var mongodb = require('./db');
+var mongodb = require('./db');		// Db对象
 var markdown = require('markdown').markdown;
 
 function Post(name, title, tags, post) {
@@ -32,8 +32,8 @@ Post.prototype.save = function(callback) {
 		pv: 0 // 记录pv数量
 	};
 	// 打开数据库
-	mongodb.open(function(err, db) {
-		if (err) {
+	mongodb.open(function(err, db) {	// open方法使用一个参数，这个参数为函数，用于指定执行数据库链接操作后返回的回调函数
+		if (err) {	// 链接失败时抛出的错误  err
 			return callback(err);
 		}
 		// 读取posts集合
@@ -46,7 +46,7 @@ Post.prototype.save = function(callback) {
 			collection.insert(post, {
 				safe: true
 			}, function(err) {
-				mongodb.close();
+				mongodb.close();		// 当一个数据库不再使用的时候就要调用close()
 				if (err) {
 					return callback(err); // 失败！返回err
 				}
