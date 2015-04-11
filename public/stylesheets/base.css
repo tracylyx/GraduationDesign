@@ -242,7 +242,8 @@ li {
   display: inline;
 }
 .visitor {
-  padding-top: 10px;
+  margin-top: 10px;
+  text-align: center;
 }
 .visitor li {
   display: inline;
@@ -469,3 +470,32 @@ i {
 /**
   * search
   */
+/**
+ * Responsive Web Design
+ */
+@media (max-width: 768px) {
+  .m-cf {
+    clear: both;
+    display: block;
+    overflow: hidden;
+  }
+  .m-cf:after {
+    zoom: 1;
+  }
+  .friend-link li {
+    float: left;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hot-tags,
+  .friend-link {
+    float: left;
+  }
+  .hot-tags {
+    width: 50%;
+  }
+  .friend-link {
+    width: 47%;
+    margin-left: 3%;
+  }
+}

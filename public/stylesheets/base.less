@@ -271,7 +271,8 @@ ul, li {
 	display: inline;
 }
 .visitor {
-	padding-top: 10px;
+	margin-top: 10px;
+	text-align: center;   // 未知宽高的居中方法
 	li {
 		display: inline;
 		padding: 10px;	
@@ -499,4 +500,34 @@ i { text-indent: -9999px; width: 30px; height: 30px; display: block; float: left
   */
 .snap img {
 	
+}
+
+/**
+ * Responsive Web Design
+ */
+ @media (max-width: 768px) {
+ 	.m-cf {
+ 		clear: both;
+ 		display: block;
+ 		overflow: hidden;
+ 	}
+ 	.m-cf:after {
+ 		zoom: 1;
+ 	}
+ 	.friend-link li {
+ 		float: left;
+ 	}
+ }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.hot-tags, .friend-link {
+		float: left;
+	}
+	.hot-tags {
+		width: 50%;
+	}
+	.friend-link {
+		width: 47%;
+		margin-left: 3%;
+	}
 }
