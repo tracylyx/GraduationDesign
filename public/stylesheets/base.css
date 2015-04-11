@@ -367,52 +367,53 @@ footer p {
  */
 .input-group {
   width: 100%;
-  height: 50px;
-  margin: 0 auto;
 }
 .input-group input {
   width: 40px;
-  height: 30px;
+  height: 35px;
   transition: width 2s;
   z-index: 1000;
   position: absolute;
+  text-indent: 3em;
 }
 .input-group input:hover {
   width: 100%;
+  outline: none;
 }
 .share {
   padding-left: 50px;
 }
-.share i {
+i {
   text-indent: -9999px;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   display: block;
   float: left;
+  margin-right: 20px;
 }
-.share .xl {
-  background: url(share.png) -67px -17px;
+.xl {
+  background: url(../images/share.png) 0px 0px;
 }
-.share .xl:hover {
-  background: url(share.png) -127px -17px;
+.xl:hover {
+  background: url(../images/share.png) -60px 0px;
 }
-.share .wb {
-  background: url(share.png) -190px -17px;
+.wb {
+  background: url(../images/share.png) -124px 0px;
 }
-.share .wb:hover {
-  background: url(share.png) -250px -17px;
+.wb:hover {
+  background: url(../images/share.png) -184px 0px;
 }
-.share .tx {
-  background: url(share.png) -310px -17px;
+.tx {
+  background: url(../images/share.png) -240px 0px;
 }
-.share .tx:hover {
-  background: url(share.png) -370px -17px;
+.tx:hover {
+  background: url(../images/share.png) -300px 0px;
 }
-.share .kj {
-  background: url(share.png) -426px -17px;
+.kj {
+  background: url(../images/share.png) -358px 0px;
 }
-.share .kj:hover {
-  background: url(share.png) -486px -17px;
+.kj:hover {
+  background: url(../images/share.png) -417px 0px;
 }
 /**
  * paging

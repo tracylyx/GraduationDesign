@@ -34,20 +34,7 @@
 		<!-- 右侧 -->
 		<div class="col-xs-3">
 			<!-- 本站搜索 -->
-			<div class="input-group">
-				<form action="/search" method="get">
-					<input type="text" name="key" class="form-control" placeholder="输入要查找的内容">
-					<div class="share">
-						<i class="xl">新浪</i>
-						<i class="wb">微博</i>
-						<i class="tx">腾讯</i>
-						<i class="kj">空间</i>
-					</div>
-					<!-- <span class="input-group-btn">
-						<button class="btn btn-reverse" type="button">Go!</button>
-					</span> -->
-				</form>		
-			</div>
+			<%- include searchkey %>
 			<!-- 近期文章 -->
 			<div class="sb-box">
 				<h4 class="sb-line">近期文章</h4>
