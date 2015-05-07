@@ -76,7 +76,7 @@ module.exports = function(app) {
 	// 登出
 	app.get('/logout', checkLogin);
 	app.get('/logout', function(req, res) {
-		req.session.user = null; // 通过赋值为null，从而都掉session中的用户信息，实现用户的退出
+		req.session.user = null; // 通过赋值为null，从而都调session中的用户信息，实现用户的退出
 		req.flash('success', '退出啦~~~');
 		res.redirect('/'); // 退出成功后跳转主页
 	});
